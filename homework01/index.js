@@ -18,7 +18,7 @@ const filteredArray = filterArray(users, 21);
 console.log(filteredArray);
 
 
-// Филтрирање на дадена низа по даден параметар
+// Сортирање на дадена низа по даден параметар
 
 function sortedArray(arrayName, key, op){
     return arrayName.sort((a, b)=>
@@ -43,8 +43,8 @@ function sumNumbers(key){
     return users.reduce((totalAge, user) => totalAge + user[key] ,0)
 }
 
-const resultOfSumNumbers = sumNumbers('age')
-console.log(resultOfSumNumbers);
+// const resultOfSumNumbers = sumNumbers('age')
+console.log(sumNumbers('age'));
 
 
 // Пронаоѓање на член од дадена низа
