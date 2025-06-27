@@ -64,7 +64,8 @@ const sumProsek = studenti.reduce(
     if (student.ime.endsWith("a")) {
       acc.a += student.prosek;
     } else {
-      acc.b += student.prosek;
+      // acc.b = acc.b + student.prosek
+      acc.b += student.prosek; 
     }
     return acc;
   },

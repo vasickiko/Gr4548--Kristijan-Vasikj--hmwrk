@@ -15,6 +15,7 @@ const readFile = (fileName) => {
     return new Promise((resolve, reject)=>{
         fs.readFile(fileName, "utf-8", (err, data)=>{
             if(err) reject(err);
+            // Resolve koristime samo za read deka datata e veke zapisana
             resolve(data);
         })
     })
@@ -23,27 +24,17 @@ const readFile = (fileName) => {
 // Append
 const appendFile = (fileName, data) => {
     return new Promise((resolve, reject)=>{
-        fs.appendFile (fileName, data, (err, data) => {
+        fs.appendFile (fileName, data, (err) => {
             if(err) reject(err);
-            resolve(data);
+            resolve();
         })
     })
 }
 
-// Second read
-const readAfterAppend = (fileName) => {
-    return new Promise((resolve, reject) => {
-        fs.readFile(fileName, "utf-8", (err, data)=>{
-            if(err) reject(err);
-            resolve(data);
-        })
-    })
-}
 
 module.exports = {
     writeFile,
     readFile,
     appendFile,
-    readAfterAppend, 
 }
 
