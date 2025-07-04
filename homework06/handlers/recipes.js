@@ -16,7 +16,7 @@ const deleteRecipe = async (req, res) => {
     let recipes = await read();
     recipes = recipes.filter((recipe, i) => i !== Number(req.params.id));
     await write(recipes);
-    res.status(200).send(`Recipe with id ${req.params.id} has been deleted rq succesfully`);
+    res.status(200).send(`Recipe with id ${req.params.id} has been deleted`);
 }
 
 const editRecipe = async (req, res) => {
@@ -33,9 +33,9 @@ const editRecipe = async (req, res) => {
 
 const searchRecipe = async (req, res) => {
   const recipes = await read();
-  const query = req.query.ime?.toLowerCase();
+  const query = req.query.ime?.toLowerCase(); 
 
-  const filteredRecipes = recipes.filter(recipe =>recipe.ime.toLowerCase()=== query);
+  const filteredRecipes = recipes.filter(recipe => recipe.ime.toLowerCase() === query);
 
   if (filteredRecipes.length > 0) {
     res.status(200).send(filteredRecipes);

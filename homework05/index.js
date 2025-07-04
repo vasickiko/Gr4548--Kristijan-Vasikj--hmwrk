@@ -45,7 +45,7 @@ server.listen(3000, () => console.log("Server started at port 3000!"));
 
 
 // phone = "+389 123-123-123";
-// pattern = /^\+389 \d{2}-\d{3}-\d{3}$/;
+// pattern = /^\+389 \d{3}-\d{3}-\d{3}$/;
 
 // address = Street Name 123, cityName
 // pattern = /^[A-Za-z\s]+ \d{1,3}, [A-Za-z\s]+$/
